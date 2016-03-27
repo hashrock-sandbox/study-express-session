@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Express session</h1>
+    <% if(username){ %>
+    <p>Hello, <%= username %></p>
+    <% } %>
+    
+    <p>cookie: <%= cookie["connect.sid"] %></p>
+    
+    <p><a href="/login">login</a></p>
+</body>
+</html>
