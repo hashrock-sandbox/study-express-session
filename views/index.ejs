@@ -5,14 +5,15 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Express session</h1>
+    <h1>express-session example</h1>
     <% if(username){ %>
     <p>Hello, <%= username %></p>
+    <p><a href="/logout">logout</a></p>
+    <% }else{ %>
+    <p><a href="/login">login</a></p>
     <% } %>
     
     <p>cookie: <%= cookie["connect.sid"] %></p>
     
-    <p><a href="/login">login</a></p>
-    <p><a href="/logout">logout</a></p>
 </body>
 </html>
