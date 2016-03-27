@@ -26,7 +26,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
     secret: 'brabra',
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: true,
+    cookie: {
+//        secure: true
+    }
 }));
 
 app.get("/login", function(req, res){
@@ -38,6 +41,15 @@ app.post("/login", function(req, res){
     console.log(username);
     req.session.username = username;
     res.redirect("/");
+})
+
+app.get("/logout", function(req, res){
+    req.session.destroy(function(err){
+        if(err){
+            console.log(err);
+        }
+        res.redirect("/");
+    })
 })
 
 app.get("/", function(req, res){
